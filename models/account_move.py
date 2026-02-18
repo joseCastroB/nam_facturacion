@@ -40,5 +40,5 @@ class AccountMove(models.Model):
 
     # COMENTAR LAS SIGUIENTES LINEAS CUANDO SE SUBA A PRODUCCION: 
 
-    exchange_rate = fields.Float(string='Tipo de Cambio')
-    error_dialog = fields.Text(string='Mensaje de Error')
+    #exchange_rate = fields.Float(string='Tipo de Cambio')
+    #error_dialog = fields.Text(string='Mensaje de Error')
