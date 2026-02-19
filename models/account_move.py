@@ -1,5 +1,19 @@
 from odoo import models, fields, api
 
+class NamCaja(models.Model):
+    _name = 'nam.caja'
+    _description = 'Listado de Cajas NAM'
+
+    name = fields.Char(string='Nombre o Número de Caja', required=True)
+
+class AccountMoveLine(models.Model):
+    _inherit = 'account.move.line'
+
+    nam_caja_id = fields.Many2one(
+        comodel_name='nam.caja', 
+        string='Nro. Caja'
+    )
+
 class AccountMove(models.Model):
     _inherit = 'account.move'
 
@@ -42,3 +56,7 @@ class AccountMove(models.Model):
 
     #exchange_rate = fields.Float(string='Tipo de Cambio')
     #error_dialog = fields.Text(string='Mensaje de Error')
+
+    #nam_caja_id = fields.Char(string='Nro. Caja')
+
+    
