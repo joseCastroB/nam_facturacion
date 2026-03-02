@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_account_analytic_line_form_nam_usd" model="ir.ui.view">
+            <field name="name">account.analytic.line.form.nam.usd</field>
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id" ref="analytic.view_account_analytic_line_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='amount']" position="after">
+                    <field name="nam_importe_usd" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_account_analytic_line_tree_nam_usd" model="ir.ui.view">
+            <field name="name">account.analytic.line.tree.nam.usd</field>
+            <field name="model">account.analytic.line</field>
+            <field name="inherit_id" ref="analytic.view_account_analytic_line_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='amount']" position="after">
+                    <field name="nam_importe_usd" optional="show" sum="Total $"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
